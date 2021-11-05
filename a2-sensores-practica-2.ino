@@ -8,7 +8,7 @@ long duracion, distancia;
 float temperatura;
 
 Servo servoMotor;
-LiquidCrystal_I2C lcd(0x3F,16,2);  //
+LiquidCrystal_I2C lcd(0x27,16,2);  //
 
 void setup() {
    Serial.begin(9600);
@@ -18,9 +18,9 @@ void setup() {
    lcd.init();
    lcd.backlight();
    lcd.setCursor(0, 0);
-   lcd.print("Dist: ")
+   lcd.print("Dist: ");
    lcd.setCursor(0, 1);
-   lcd.print("Temp: ")
+   lcd.print("Temp: ");
 }
 
 void loop() {   
@@ -38,11 +38,11 @@ void loop() {
    Serial.print("Distancia: ");
    Serial.println(distancia);
    lcd.setCursor(6, 0);
-   lcd.print(distancia)
+   lcd.print(distancia);
    Serial.print("Temperatura: ");
    Serial.println(temperatura);
    lcd.setCursor(6, 1);
-   lcd.print(temperatura)
+   lcd.print(temperatura);
    delay(1000);
   
   servoMotor.write(0);
